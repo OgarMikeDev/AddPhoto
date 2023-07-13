@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Photo</title>
+</head>
+
+<body>
+   <header></header>
+
+   <section>
+      <img src="assets/img/bachelor Mike obrez.jpg">
+      <form method="post" action="/addPhoto/" enctype="multipart/form-data">
+          <input id="load_photo" name="load_photo" type="file">
+          <input type="submit"
+                 class="button_save_photo" value="Сохранить фото" name="add_photo">
+      </form>
+   </section>
+
+   <footer></footer>
+
+   <link rel="stylesheet" type="text/css" href="css/styleMainPage.css">
+</body>
+
+</html>
