@@ -14,5 +14,6 @@ public class Photo {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
+    //var photo
     private File photo;
 }
