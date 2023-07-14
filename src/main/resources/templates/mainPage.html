@@ -9,17 +9,19 @@
    <header></header>
 
    <section>
-      <img src="assets/img/bachelor Mike obrez.jpg">
-      <form method="post" action="/addPhoto/" enctype="multipart/form-data">
+      <img src="assets/img/bachelor Mike obrez.jpg" id="img" name="img">
+      <form id="form_form_photo">
           <input id="load_photo" name="load_photo" type="file">
-          <input type="submit"
-                 class="button_save_photo" value="Сохранить фото" name="add_photo">
+          <input id="get_photo" name="get_photo" type="text">
+          <input type="button" id="button_save_photo" value="Сохранить фото">
       </form>
    </section>
 
    <footer></footer>
 
    <link rel="stylesheet" type="text/css" href="css/styleMainPage.css">
+   <script src="js/jquery.js"></script>
+   <script src="js/jsForMainPage.js"></script>
 </body>
 
 </html>
