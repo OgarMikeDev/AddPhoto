@@ -16,7 +16,7 @@ public class RestController {
     private PhotoRepository photoRepository;
 
     @PostMapping("/addPhoto/")
-    public void addPhoto(@RequestParam("img") File photo) {
+    public void addPhoto(@RequestParam("text_form_photo") File photo) {
         Photo photoOne = new Photo();
         photoOne.setPhoto(photo);
         photoRepository.save(photoOne);

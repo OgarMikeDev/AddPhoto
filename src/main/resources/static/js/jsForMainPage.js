@@ -13,9 +13,8 @@ $("#load_photo").change(function() {
          img.style.border="2px solid black";
          img.style.objectFit="cover";
 
-         var photo = {};
-         photo[0] = img;
-         console.log("One element photo '" + photo[0] + ".");
+         var text_photo = document.getElementById("text_form_photo");
+         text_photo.value = img;
       }
       reader.readAsDataURL(this.files[0]);
    }
@@ -23,21 +22,26 @@ $("#load_photo").change(function() {
 
 //Full update data
 //$("#button_save_photo").click(function() {
-//   var data = $("#form_form_photo").serialize();
-//   console.log("Method add photo. Data: " + data + ".")
-//   $.ajax ({
-//      method: "POST",
-//      url: "/addPhoto/",
-//      data: data,
-//      success: function(response) {
-//         var photo = {};
-//         photo.id = response;
-//         console.log("Method add photo. Response: " + response + ".");
-//         var dataArray = $("#form_form_photo").serializeArray();
-//         for (i in dataArray) {
-//            photo[dataArray[i]["photo"]] = dataArray[i]["value"];
-//         }
-//      }
-//   });
-//   return false;
+//   var img = document.getElementById("img");
+//   var photo = {};
+//   photo[0] = img;
 //});
+
+//Full update data
+$("#button_save_photo").click(function() {
+   var data = $("#form_form_photo").serialize();
+   console.log("Method add photo. Data: " + data + ".")
+   $.ajax ({
+      method: "POST",
+      url: "/addPhoto/",
+      data: data,
+      success: function() {
+         var photo = {};
+         var dataArray = $("#form_form_photo").serializeArray();
+//         photo[dataArray[0]["photo"]] = dataArray[0]["value"];
+         photo[dataArray[0]["photo"]] = document.getElementById("img").src;
+         console.log("Method full load photo. One element photo '" + photo[dataArray[0]["photo"]] + "'.");
+      }
+   });
+   return false;
+});
