@@ -20,17 +20,14 @@ $("#load_photo").change(function() {
 //Full update data
 $("#button_save_photo").click(function() {
    var data = $("#form_form_photo").serialize();
-   console.log("Value entrance data '" + data + "'.")
    $.ajax ({
       method: "POST",
       url: "/addPhoto/",
       data: data,
       success: function(response) {
          var photo = {};
-         var dataArray = $("#form_form_photo").serializeArray();
-//         photo[[0]["photo"]] = dataArray[0]["value"];
-
          photo[[0]["photo"]] = document.getElementById("img").src;
+         document.getElementById("text_form_photo").value = document.getElementById("img").src;
          console.log("Method treatment photo. One element form with data '" + photo[[0]["photo"]] +
          "'.")
       }
