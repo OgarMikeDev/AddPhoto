@@ -8,14 +8,15 @@
 <body>
    <header></header>
 
-   <section>
-      <form id="form_form_photo">
-          <img src="assets/img/bachelor Mike obrez.jpg" id="img" name="img">
-          <input id="load_photo" name="load_photo" type="file">
-          <textarea id="text_form_photo" name="text_form_photo"></textarea>
-          <input type="button" id="button_save_photo" value="Сохранить фото">
-      </form>
-   </section>
+
+   <img id="img" name="img" th:src="${'/image/352'}">
+
+<!--   <section>-->
+<!--      <form id="form_form_photo" action="/upload" method="post" enctype="multipart/form-data">-->
+      <input id="load_photo" name="file" type="file" accept="image/*">
+      <button id="button_save_photo" value="Сохранить фото">test</button>
+<!--      </form>-->
+<!--   </section>-->
 
    <footer></footer>
 
